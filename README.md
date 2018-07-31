@@ -1,9 +1,6 @@
 # Sales Order Module
 > Raw PHP based project to manage sales orders and remotly update oracle database. 
 
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
 
 Sales Order Module is a raw php based project to manage sales order that is connected to Oracle database. It has some simple sql statement that will help to begginers who wanted to start a php project that integrated to Oracle database. Also it has some common and useful jquery code that is useful for e-commerce based project. You are welcome to contribute this project.  
 
