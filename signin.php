@@ -24,11 +24,12 @@ if(isset($_POST['signin'])){
     $branch_id      = $_POST['branch-id'];
     $password       = $_POST['password'];
     $rand_string    = $_POST['rand'];
-
+    
+    //Checking for CSRF Valid token
     if($rand_string != $_SESSION['rand_str']){
         die('Stop gentle man!!');
     }
-    //$password = 'admin';
+
     $sql = "SELECT EMP_ID, EMP_NICKNAME, COMPANY_ID, BRANCH_ID FROM sndms.SOFTWARE_USER_INFO WHERE USER_ID = :emp_id AND BRANCH_ID = :branch_id AND USER_PASS_WORD=:password";
     $query = oci_parse($conn, $sql);
     oci_bind_by_name($query, ':emp_id', $emp_id);
