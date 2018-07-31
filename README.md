@@ -10,15 +10,7 @@ php and oracle remote connect database to create order and distribution module.
 
 Sales Order Module is a raw php based project to manage sales order that is connected to Oracle database. It has some simple sql statement that will help to begginers who wanted to start a php project that integrated to Oracle database. Also it has some common and useful jquery code that is useful for e-commerce based project. You are welcome to contribute this project.  
 
-![](header.png)
-
-## Installation
-
-Run this command in your terminal to Clone this project:
-
-```sh
-git clone https://github.com/icelimon/orderModule.git
-```
+[travis-image]
 
 
 ## Usage example
@@ -26,43 +18,31 @@ git clone https://github.com/icelimon/orderModule.git
 Very simple design layout, it has so CSS Frameworks(Like Bootstrap, Materialize...). E-commerce and ERP solution uses this types of client interactions. 
 
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
 ## Development setup
 
-Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
+Run this command in your terminal to Clone this project:
 
 ```sh
-make install
-npm test
+git clone https://github.com/icelimon/orderModule.git
 ```
 
-## Release History
+After installation, you have to create two oracle schema named, 
+1. DEALER_POST_MST with the following fields..
+ - DEALER_PO_NO, BRANCH_ID, DEALER_ID, SUB_DEALER_ID, DEALER_PO_DATE, PO_DELIVERY_DATE
 
-* 0.2.1
-    * CHANGE: Update docs (module code remains unchanged)
-* 0.2.0
-    * CHANGE: Remove `setDefaultXYZ()`
-    * ADD: Add `init()`
-* 0.1.1
-    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
-* 0.1.0
-    * The first proper release
-    * CHANGE: Rename `foo()` to `bar()`
-* 0.0.1
-    * Work in progress
+2. DEALER_POST_DTL with the following fields..
+ - PO_DLT_SL, DEALER_PO_NO, ITEM_ID, DISCOUNT_PCT, ITEM_QNTY, CREATE_EMP_ID, CREATE_DATE
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/icelimonbd) – YourEmail@example.com
+Shariful Islam – [@YourTwitter](https://twitter.com/icelimonbd) – icelimon.pro@gmail.com
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/icelimon/orderModule](https://github.com/icelimon/)
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/icelimon/orderModule/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
@@ -74,4 +54,3 @@ Distributed under the XYZ license. See ``LICENSE`` for more information.
 [npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
