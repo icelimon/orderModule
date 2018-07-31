@@ -14,39 +14,9 @@ include_once 'includes/header.php';
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 
-
-
 if(!isset($_SESSION['loggedin'])){
     header("Location: index.php");
 }
-
-/*
-if(isset($_POST['signup'])){
-    $fname = $_POST['firstname'];
-    $lname = $_POST['lastname'];
-    $email = $_POST['youremail'];
-    $verifyemail = $_POST['reenteremail'];
-    $password = md5($_POST['password']);
-
-    $dob_month = $_POST['dob-month'];
-    $dob_day = $_POST['dob-day'];
-    $dob_year = $_POST['dob-year'];
-
-    $gender = $_POST['sex'];
-
-    $fullname = $fname.' '.$lname;
-    $dob = $dob_day.' '.$dob_month.' '.$dob_year;
-
-    $sql = "INSERT INTO user(fullname,email,password,dob,gender) VALUES('$fullname','$email', '$password', '$dob', '$gender')"; 
-    $query = mysqli_query($conn, $sql);
-    if($query){
-        echo '<br>Signup Successful';
-        echo '<a href="signin.php">Sign in</a>';
-    }else{
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
-    }
-}
-*/
 
 if(isset($_POST['signin'])){
 
@@ -86,52 +56,9 @@ if(isset($_POST['signin'])){
     }else{
         $_SESSION['msg'] = 'Failed to log in!<br>Wrong Employee id or Brach id or Password.';
     }
-
     oci_free_statement($query);
-   
-    /*
-    $nickname = $_POST['nickname'];
-    if (!$conn) {
-        $e = oci_error();
-        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-    }
-
-// Prepare the statement
-    $stid = oci_parse($conn, 'SELECT * FROM pmis.EMPLOYEE_INFO WHERE EMP_NICKNAME = :nickname ');
-    if (!$stid) {
-        $e = oci_error($conn);
-        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-    }
-    oci_bind_by_name($stid, ':nickname', $nickname);
-// Perform the logic of the query
-    $r = oci_execute($stid);
-    if (!$r) {
-        $e = oci_error($stid);
-        trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
-    }
-
-// Fetch the results of the query
-    print "<table border='1'>\n";
-    while ($row = oci_fetch_array($stid, OCI_ASSOC+OCI_RETURN_NULLS)) {
-        print "<tr>\n";
-        foreach ($row as $item) {
-            print "    <td>" . ($item !== null ? htmlentities($item, ENT_QUOTES) : "&nbsp;") . "</td>\n";
-        }
-        print "</tr>\n";
-    }
-    print "</table>\n";
-
-    oci_free_statement($stid);
-    */
-    //oci_close($conn);
-
-
 
 }
-
-
-
-
 
 include_once 'includes/footer.php';
 ?>
